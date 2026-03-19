@@ -1,0 +1,110 @@
+/* --- ESTILOS DE MARVEL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+h1, h3 {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+/* --- 1. CENTRADO TOTAL (UCM HEADER) --- */
+.ucm-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+
+    /* Magia Flexbox */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+}
+
+.hero-content h1 {
+    font-size: 120px;
+    color: #e62429; /* Rojo Marvel */
+    text-shadow: 4px 4px 0px white;
+}
+
+.btn-avenge {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #e62429;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    /* Centramos el botón solito dentro de la columna flex */
+    align-self: center; 
+}
+
+.btn-avenge:hover {
+    background-color: white;
+    color: #e62429;
+    transform: scale(1.1);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 2. MULTIVERSO GRID (WRAP Y GROW) --- */
+.multiverse-grid {
+    display: flex;
+    flex-wrap: wrap; /* Los héroes saltan de línea si no caben */
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-card {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: 0.3s;
+    
+    /* Configuración Flex */
+    flex-basis: 250px; /* Ancho base */
+    flex-grow: 1;      /* Todos crecen para llenar filas */
+}
+
+.character-card:hover {
+    border-color: #e62429;
+    background-color: #262626;
+}
+
+/* --- 3. MODIFICADORES ESPECÍFICOS --- */
+
+.character-card.leader {
+    flex-grow: 2; /* El Capitán América ocupa más espacio en la fila */
+    border-left: 5px solid #0055a4; /* Azul */
+}
+
+.character-card.tank {
+    flex-shrink: 0; /* Hulk no se hace pequeño, mantiene su tamaño */
+    background-color: #2b3a2b; /* Tono verdoso */
+    min-width: 350px;
+}
+
+.badge {
+    display: inline-block;
+    background: #e62429;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
